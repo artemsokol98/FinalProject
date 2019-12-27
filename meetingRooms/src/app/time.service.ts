@@ -26,7 +26,7 @@ export class TimeService {
     return this.http.delete(url);
   }
   getRooms(comnata) {
-    return this.http.get('http://localhost:3000/rooms?id=' + comnata).subscribe(result => { this.dannie = result; });
+    return this.http.get('http://localhost:3000/rooms?id=' + comnata + '&_sort=startAt&_order=asc').subscribe(result => { this.dannie = result; });
 
 
   }

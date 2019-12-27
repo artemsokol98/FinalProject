@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,12 +15,22 @@ import { ngMaterialDatePicker } from 'ng-material-datetimepicker';
 
 
 import {
+
   MatButtonModule,
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
   MatCardModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatFormFieldModule,
+  MatInputModule,
+
+
 } from '@angular/material';
+import {
+  MatIconRegistry
+} from '@angular/material/icon'
 // import {axios} from 'axios';
 // const axios = require('axios').default;
 
@@ -43,6 +53,10 @@ import {
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule
     // DatePickerComponent
   ],
   exports: [MatButtonModule,
@@ -50,8 +64,13 @@ import {
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule
     ],
   providers: [TimeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

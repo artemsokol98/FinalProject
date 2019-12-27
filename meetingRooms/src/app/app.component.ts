@@ -13,10 +13,9 @@ import { timer } from 'rxjs';
   styleUrls: ['./app.component.scss'],
   template: `<div>
   <router-outlet>
-  <div><a href="/"><h1>На главную</h1></a></div>
+  <div class="header" ><a href="/"><h1>На главную</h1></a></div>
 <div class = "header">
   <div class="header_style" ><a href="/rooms">rooms</a></div>
-  <div class="header_style" ><a href="/login">login</a></div>
 </div>
    </router-outlet> </div>`
 })
