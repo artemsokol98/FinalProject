@@ -1,22 +1,32 @@
 <p>rooms works!</p>
 <div class="button-flex">
-<div>
-<button  class="button-room" color="primary" type="submit" (click)="getEvents(1)">комната 1</button>
-</div>
-<div>
-<button type="submit" class="button-room" (click)="getEvents(2)">комната 2</button>
-</div>
-<div>
-<button type="submit" class="button-room" (click)="getEvents(3)">комната 3</button>
-</div>
+  <div>
+    <button
+      class="button-room"
+      color="primary"
+      type="submit"
+      (click)="getEvents(1)"
+    >
+      комната 1
+    </button>
+  </div>
+  <div>
+    <button type="submit" class="button-room" (click)="getEvents(2)">
+      комната 2
+    </button>
+  </div>
+  <div>
+    <button type="submit" class="button-room" (click)="getEvents(3)">
+      комната 3
+    </button>
+  </div>
 </div>
 
 <div *ngIf="showInputForm" class="forms-and-output">
-<div>
-
-Начало
-<form [formGroup]="timeEvent">
-  <!--<div layout="column" flex-gt-md="30" class="range layout-column flex-gt-md-30">
+  <div>
+    Начало
+    <form [formGroup]="timeEvent">
+      <!--<div layout="column" flex-gt-md="30" class="range layout-column flex-gt-md-30">
     <md-input-container class="md-input-has-placeholder">
       <label>Start Date/Time</label>
       <input mdc-datetime-picker="" date="true" time="true" type="text"
@@ -46,44 +56,72 @@
       aria-hidden="true"="clear()">✕</button>
     </md-input-container>
   </div>-->
-  <div>
-<input formControlName="start" mdc-datetime-picker="" date="true" time="true" type="text" id="datetimeedit"
-placeholder="YYYY-MM-DD HH:MM" show-todays-date="" minutes="true" min-date="minDate"
-max-date="maxDate" edit-input="true" show-icon="true" ng-model="dateTimeEdit" name="datetimeedit"
-class=" dtp-no-msclear dtp-input md-input">
-</div>
-<div>
-  <div>
-Конец
-</div>
+      <div>
+        <input
+          formControlName="start"
+          mdc-datetime-picker=""
+          date="true"
+          time="true"
+          type="text"
+          id="datetimeedit"
+          placeholder="YYYY-MM-DD HH:MM"
+          show-todays-date=""
+          minutes="true"
+          min-date="minDate"
+          max-date="maxDate"
+          edit-input="true"
+          show-icon="true"
+          ng-model="dateTimeEdit"
+          name="datetimeedit"
+          class=" dtp-no-msclear dtp-input md-input"
+        />
+      </div>
+      <div>
+        <div>
+          Конец
+        </div>
 
-<input formControlName="end" mdc-datetime-picker="" date="true" time="true" type="text" id="datetimeedit"
-placeholder="YYYY-MM-DD HH:MM" show-todays-date="" minutes="true" min-date="minDate"
-max-date="maxDate" edit-input="true" show-icon="true" ng-model="dateTimeEdit" name="datetimeedit"
-class=" dtp-no-msclear dtp-input md-input">
-</div>
-<div>
+        <input
+          formControlName="end"
+          mdc-datetime-picker=""
+          date="true"
+          time="true"
+          type="text"
+          id="datetimeedit"
+          placeholder="YYYY-MM-DD HH:MM"
+          show-todays-date=""
+          minutes="true"
+          min-date="minDate"
+          max-date="maxDate"
+          edit-input="true"
+          show-icon="true"
+          ng-model="dateTimeEdit"
+          name="datetimeedit"
+          class=" dtp-no-msclear dtp-input md-input"
+        />
+      </div>
+      <div>
+        <div>
+          Что будет проходить
+        </div>
+        <input formControlName="name" />
+        <button type="submit" (click)="createEvent()">записать</button>
+      </div>
+    </form>
+    <form [formGroup]="Event">
+      <div>
+        номер события, чтобы удалить
+      </div>
+      <input formControlName="numberEvent" />
+      <button type="submit" (click)="deleteEvent()">Удалить</button>
+    </form>
+  </div>
   <div>
-Что будет проходить
-</div>
-<input formControlName="name">
-<button type="submit" (click)="createEvent()">записать</button>
-</div>
-</form>
-<form [formGroup]="Event">
-  <div>
-номер события, чтобы удалить
-</div>
-<input formControlName="numberEvent">
-<button type="submit" (click)="deleteEvent()">Удалить</button>
-</form>
-</div>
-<div>
-<div class="kolbasa" *ngFor="let event of events ">
-  <div class="kolbasa_element">Id: {{event.id | json}} </div>
-  <div> Name: {{event.name | json}} </div>
-  <div>  Начало: {{event.startAt | json}} </div>
-  <div>Конец: {{event.endAt | json}} </div>
-</div>
-</div>
+    <div class="kolbasa" *ngFor="let event of events">
+      <div class="kolbasa_element">Id: {{ event.id | json }}</div>
+      <div>Name: {{ event.name | json }}</div>
+      <div>Начало: {{ event.startAt | json }}</div>
+      <div>Конец: {{ event.endAt | json }}</div>
+    </div>
+  </div>
 </div>
