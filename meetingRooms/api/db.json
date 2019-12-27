@@ -1,0 +1,65 @@
+{
+  "users": [
+    {
+      "email": "user1@example.com",
+      "password": "$2a$10$rLQaNpEWeT5VFRwcJC03q.xYB2N7N76UNuNtjEZHvMg3ZdIshpitG",
+      "login": "Первый Юзер",
+      "id": 1
+    },
+    {
+      "email": "user2@example.com",
+      "password": "$2a$10$/RGawTXg6v9JpzHPPRSfFejJ9olVftJ2HFfFQo.g6aGGIVWQN7YcC",
+      "login": "Второй Юзер",
+      "id": 2
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$EbLo4gX/FZaw46KkxZNMTO0DlPxjYikMK9i1n/0MhuLcN8L7H3Yle",
+      "id": 3
+    },
+    {
+      "login": "artem",
+      "email": "artem",
+      "password": "artem",
+      "id": 4
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Большая переговорка"
+    },
+    {
+      "id": 2,
+      "name": "Средняя переговорка"
+    },
+    {
+      "id": 3,
+      "name": "Правая переговорка"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "name": "Урок английского у второй группы",
+      "startAt": "2019-12-19 07:30:00 UTC",
+      "endAt": "2019-12-19 08:30:00 UTC",
+      "userId": 1,
+      "roomId": 1
+    },
+    {
+      "startAt": "2020-12-12 12:00",
+      "endAt": "2020-12-12 13:00",
+      "roomId": 3,
+      "name": "Совещание",
+      "id": 3
+    },
+    {
+      "startAt": "2222-22",
+      "endAt": "2222-22",
+      "roomId": 1,
+      "name": "Да прибудет с тобой сила",
+      "id": 4
+    }
+  ]
+}

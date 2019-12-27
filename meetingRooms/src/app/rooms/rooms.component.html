@@ -1,0 +1,89 @@
+<p>rooms works!</p>
+<div class="button-flex">
+<div>
+<button  class="button-room" color="primary" type="submit" (click)="getEvents(1)">комната 1</button>
+</div>
+<div>
+<button type="submit" class="button-room" (click)="getEvents(2)">комната 2</button>
+</div>
+<div>
+<button type="submit" class="button-room" (click)="getEvents(3)">комната 3</button>
+</div>
+</div>
+
+<div *ngIf="showInputForm" class="forms-and-output">
+<div>
+
+Начало
+<form [formGroup]="timeEvent">
+  <!--<div layout="column" flex-gt-md="30" class="range layout-column flex-gt-md-30">
+    <md-input-container class="md-input-has-placeholder">
+      <label>Start Date/Time</label>
+      <input mdc-datetime-picker="" date="true" time="true" type="text"
+      placeholder="Date" minutes="true" edit-input="true" max-date="dateTimeEnd" show-icon="true"
+      ng-model="dateTimeStart" class=" dtp-no-msclear dtp-input md-input" id="input_3">
+      <div class="md-errors-spacer"></div>
+      <button class="dtp-btn-calendar md-icon-button md-button md-ink-ripple"
+      type="button"="" tabindex="-1" aria-hidden="true" ng-click="openCalendarDiag($event)">
+        <md-icon aria-label="md-calendar" md-svg-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkgM2gtMVYxaC0ydjJIOFYxSDZ2Mkg1Yy0xLjExIDAtMS45OS45LTEuOTkgMkwzIDE5YzAgMS4xLjg5IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMTZINVY4aDE0djExek03IDEwaDV2NUg3eiIvPjwvc3ZnPg=="
+        class="" role="img"></md-icon>
+      </button>
+      <button class="md-icon-button dtp-clear md-button md-ink-ripple" type="button"=""="currentDate"
+      aria-hidden="true"="clear()">✕</button>
+    </md-input-container>
+    <md-input-container class="md-input-has-placeholder">
+      <label>End Date/Time</label>
+      <input mdc-datetime-picker="" date="true" time="true" type="text"
+      placeholder="Date" minutes="true" edit-input="true" min-date="dateTimeStart" show-icon="true"="dateTimeEnd"
+      class=" dtp-no-msclear dtp-input md-input" id="input_4">
+      <div class="md-errors-spacer"></div>
+      <button class="dtp-btn-calendar md-icon-button md-button md-ink-ripple"
+      type="button"="" tabindex="-1" aria-hidden="true"="openCalendarDiag($event)">
+        <md-icon aria-label="md-calendar" md-svg-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkgM2gtMVYxaC0ydjJIOFYxSDZ2Mkg1Yy0xLjExIDAtMS45OS45LTEuOTkgMkwzIDE5YzAgMS4xLjg5IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMTZINVY4aDE0djExek03IDEwaDV2NUg3eiIvPjwvc3ZnPg=="
+        class="" role="img"></md-icon>
+      </button>
+      <button class="md-icon-button dtp-clear md-button md-ink-ripple" type="button"=""="currentDate"
+      aria-hidden="true"="clear()">✕</button>
+    </md-input-container>
+  </div>-->
+  <div>
+<input formControlName="start" mdc-datetime-picker="" date="true" time="true" type="text" id="datetimeedit"
+placeholder="YYYY-MM-DD HH:MM" show-todays-date="" minutes="true" min-date="minDate"
+max-date="maxDate" edit-input="true" show-icon="true" ng-model="dateTimeEdit" name="datetimeedit"
+class=" dtp-no-msclear dtp-input md-input">
+</div>
+<div>
+  <div>
+Конец
+</div>
+
+<input formControlName="end" mdc-datetime-picker="" date="true" time="true" type="text" id="datetimeedit"
+placeholder="YYYY-MM-DD HH:MM" show-todays-date="" minutes="true" min-date="minDate"
+max-date="maxDate" edit-input="true" show-icon="true" ng-model="dateTimeEdit" name="datetimeedit"
+class=" dtp-no-msclear dtp-input md-input">
+</div>
+<div>
+  <div>
+Что будет проходить
+</div>
+<input formControlName="name">
+<button type="submit" (click)="createEvent()">записать</button>
+</div>
+</form>
+<form [formGroup]="Event">
+  <div>
+номер события, чтобы удалить
+</div>
+<input formControlName="numberEvent">
+<button type="submit" (click)="deleteEvent()">Удалить</button>
+</form>
+</div>
+<div>
+<div class="kolbasa" *ngFor="let event of events ">
+  <div class="kolbasa_element">Id: {{event.id | json}} </div>
+  <div> Name: {{event.name | json}} </div>
+  <div>  Начало: {{event.startAt | json}} </div>
+  <div>Конец: {{event.endAt | json}} </div>
+</div>
+</div>
+</div>

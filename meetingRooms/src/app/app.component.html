@@ -1,0 +1,30 @@
+<div>
+  <router-outlet>
+  <div class="header"><a href="/"><h1>На главную</h1></a></div>
+  <div class="header">
+  <div class="header__size" ><a href="/">Первая комната</a></div>
+  <div class="header__size" ><a href="/">Вторая комната</a></div>
+  <div class="header__size" ><a href="/">Третья комната</a></div>
+  </div>
+  </router-outlet>
+</div>
+<form [formGroup]="loginForm">
+  <h3>enter your data</h3>
+    <label >Login</label>
+    <div >
+      <input
+        formControlName="login"
+        type="text"/>
+    </div>
+    <label  >Password</label>
+    <div >
+      <input
+        formControlName="password"
+        type="text"
+        />
+    </div>
+<div>
+  <button  type="submit" (click)="Submit()">Submit</button>
+</div>
+</form>
+
